@@ -2,12 +2,13 @@ import { View, Text } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //screens
 import HomeScreen from "./screens/HomeScreen";
 import StackScreen from "./screens/StackScreen";
 import SettingsScreen from "./screens/SettingsScreen";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ModalScreen from "./screens/ModalScreen";
 
 //
 const Tab = createBottomTabNavigator();
@@ -24,9 +25,9 @@ function MyStack() {
         //headerShown: false,
         //title: '',
         //headerTitle: '',
-        
       }}
       />
+      <Stack.Screen name="Modal" component={ModalScreen} />
     </Stack.Navigator>
   );
 }

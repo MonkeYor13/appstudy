@@ -14,6 +14,12 @@ export default function HomeScreen() {
       >
         <Text style={styles.texto}>Go to Stack Screen</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.boton}
+        onPress={() => navigation.navigate("Modal")}
+      >
+        <Text style={styles.texto}>Go to Modal Screen</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -27,7 +33,7 @@ const styles = StyleSheet.create({
   boton: {
     backgroundColor: "purple",
     padding: 10,
-    marginTop: "20%",
+    marginTop: "10%",
     width: "50%",
     alignSelf: "center",
     borderRadius: 10,
