@@ -1,19 +1,23 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-//screens
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+//importamos nuestras screens
 import HomeScreen from "./screens/HomeScreen";
 import StackScreen from "./screens/StackScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import ModalScreen from "./screens/ModalScreen";
+import DrawerScreen from "./screens/DrawerScreen";
 
-//
+// creamos los stacks
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
+// Define las pantallas para cada tipo de navegación
 function MyStack() {
   return (
     <Stack.Navigator 
@@ -66,10 +70,30 @@ function MyTabs() {
   );
 }
 
+function MyDrawer() {
+  return (
+    <Drawer.Navigator >
+      <Drawer.Screen name="DrawerSreen" component={DrawerScreen} />
+      {/* <Drawer.Screen name="Article" component={Article} /> */}
+    </Drawer.Navigator>
+  );
+}
+
+// Ahora combina todos los tipos de navegación en una sola
+function MainNavigator () {
+  <Tab.Navigator>
+    <Tab.Screen name="MyTabs" component={MyTabs} />
+    <Tab.Screen name="MyStack" component={MyStack} />
+    <Tab.Screen name="MyDrawer" component={MyDrawer} />
+  </Tab.Navigator>
+};
+
+
+
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <MainNavigator />
     </NavigationContainer>
   );
 }
