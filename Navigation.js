@@ -10,6 +10,7 @@ import HomeScreen from "./screens/HomeScreen";
 import StackScreen from "./screens/StackScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import ModalScreen from "./screens/ModalScreen";
+import ComponentsScreen from "./screens/ComponentsScreen";
 import DrawerScreen from "./screens/DrawerScreen";
 
 // creamos los stacks
@@ -17,21 +18,25 @@ const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
+
 // Define las pantallas para cada tipo de navegación
 function MyStack() {
   return (
     <Stack.Navigator 
     initialRouteName="HomeScreen"
     >
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} 
+      options={{headerShown: false}}
+      />
       <Stack.Screen name="Stack" component={StackScreen}
       options={{
-        //headerShown: false,
+        headerShown: false,
         //title: '',
         //headerTitle: '',
       }}
       />
       <Stack.Screen name="Modal" component={ModalScreen} />
+      <Stack.Screen name="Components" component={ComponentsScreen} />
     </Stack.Navigator>
   );
 }
@@ -50,7 +55,7 @@ function MyTabs() {
             <MaterialCommunityIcons name="home" size={size} color={color} />
           ), //icono si lo destructuramos toma el color de su padre
           tabBarBadge: 3, //cantidad de notificaciones
-          headerShown: false, // no muestras en false el header
+          //headerShown: false, // no muestras en false el header
         }}
       />
       <Tab.Screen
@@ -72,28 +77,23 @@ function MyTabs() {
 
 function MyDrawer() {
   return (
-    <Drawer.Navigator >
-      <Drawer.Screen name="DrawerSreen" component={DrawerScreen} />
+    <Drawer.Navigator 
+    initialRouteName="HomeScreen2"
+    >
+      <Drawer.Screen name="Feed" component={MyTabs} 
+      options={{}}
+      />
       {/* <Drawer.Screen name="Article" component={Article} /> */}
     </Drawer.Navigator>
   );
 }
-
-// Ahora combina todos los tipos de navegación en una sola
-function MainNavigator () {
-  <Tab.Navigator>
-    <Tab.Screen name="MyTabs" component={MyTabs} />
-    <Tab.Screen name="MyStack" component={MyStack} />
-    <Tab.Screen name="MyDrawer" component={MyDrawer} />
-  </Tab.Navigator>
-};
 
 
 
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <MainNavigator />
+      <MyTabs/>
     </NavigationContainer>
   );
 }

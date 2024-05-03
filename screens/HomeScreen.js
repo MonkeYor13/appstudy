@@ -1,5 +1,5 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 
@@ -16,11 +16,19 @@ export default function HomeScreen() {
       >
         <Text style={styles.texto}>Go to Stack Screen</Text>
       </TouchableOpacity>
+      
       <TouchableOpacity
         style={styles.boton}
         onPress={() => navigation.navigate("Modal")}
       >
         <Text style={styles.texto}>Go to Modal Screen</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.boton}
+        onPress={() => navigation.navigate("Components")}
+      >
+        <Text style={styles.texto}>Go to Components Screen</Text>
       </TouchableOpacity>
     </View>
   );
