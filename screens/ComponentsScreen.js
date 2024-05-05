@@ -17,6 +17,7 @@ import {
   MyStatusBar,
   MyActivityIndicator,
   MyAlerts,
+  MultipleEstilos,
 } from "./AExports";
 
 export default function ComponentsScreen() {
@@ -44,6 +45,7 @@ export default function ComponentsScreen() {
         </Text>
         <ComponenteHijo name="Yorvis" />
         <ComponenteHijo name="Jesus" />
+        <MultipleEstilos/>
       </ScrollView>
     </View>
   );

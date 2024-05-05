@@ -7,6 +7,8 @@ import MyModal from "./MyModal";
 import MyStatusBar from "./MyStatusBar";
 import MyActivityIndicator from "./MyActivityIndicator";
 import MyAlerts from "./MyAlerts";
+import MultipleEstilos from "./MultipleEstilos";
+
 
 export {
   ComponenteHijo,
@@ -18,8 +20,7 @@ export {
   MyStatusBar,
   MyActivityIndicator,
   MyAlerts,
+  MultipleEstilos,
   
-
-
   // Agrega más componentes aquí si es necesario
 };

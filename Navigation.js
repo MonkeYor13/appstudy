@@ -11,7 +11,8 @@ import StackScreen from "./screens/StackScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import ModalScreen from "./screens/ModalScreen";
 import ComponentsScreen from "./screens/ComponentsScreen";
-import DrawerScreen from "./screens/DrawerScreen";
+import CardPokemon from "./screens/CardPokemon";
+
 
 // creamos los stacks
 const Tab = createBottomTabNavigator();
@@ -37,6 +38,7 @@ function MyStack() {
       />
       <Stack.Screen name="Modal" component={ModalScreen} />
       <Stack.Screen name="Components" component={ComponentsScreen} />
+      <Stack.Screen name="CardPokemon" component={CardPokemon} />
     </Stack.Navigator>
   );
 }

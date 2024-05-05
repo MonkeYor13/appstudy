@@ -30,6 +30,13 @@ export default function HomeScreen() {
       >
         <Text style={styles.texto}>Go to Components Screen</Text>
       </TouchableOpacity>
+      
+      <TouchableOpacity
+        style={styles.boton}
+        onPress={() => navigation.navigate("CardPokemon")}
+      >
+        <Text style={styles.texto}>Go to CardPokemon Screen</Text>
+      </TouchableOpacity>
     </View>
   );
 }
